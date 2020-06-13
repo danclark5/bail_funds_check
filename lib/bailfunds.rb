@@ -11,16 +11,20 @@ end
 def process_regional_data(db, regional_data)
   state = regional_data["name"]
   puts state
-  process_subregional_data(db, state, regional_data["subregions"])
+  if regional_data.keys.include? "subregions"
+    process_subregional_data(db, state, regional_data["subregions"])
+  end
+  if regional_data.keys.include? "bailfunds"
+    process_bailfunds(db, state, "", regional_data["bailfunds"])
+  end
 end
 
 def process_subregional_data(db, state, subregional_data)
-  puts subregional_data
   subregional_data.each {|srd| process_bailfunds(db, state, srd["name"], srd["bailfunds"])}
 end
 
 def process_bailfunds(db, state, city, bailfunds)
-  puts bailfunds
+  puts "  #{city}" unless city.empty?
   bailfunds.each {|bf| insert_record(db, state, city, bf["name"])}
 end
 
