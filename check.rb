@@ -6,9 +6,8 @@ require "pathname"
 require_relative "config/initialize.rb"
 require_relative "lib/bailfunds.rb"
 
-#DEFAULT_PATH = File.expand_path( File.dirname( __FILE__ ))
-DEFAULT_PATH = Pathname(__FILE__).dirname + 'test_data'
+DEFAULT_PATH = Pathname(__FILE__).dirname + 'bailfunds.github.io/_data/regions'
 
-puts "hello"
+puts "#{'*'*80}\nResistance Map bail fund checker\n#{'*'*80}"
 db = setup
-load_data(db, DEFAULT_PATH)
+load_bailfunds_data(db, DEFAULT_PATH)

@@ -1,6 +1,7 @@
 require 'yaml'
 
-def load_data(db, path)
+def load_bailfunds_data(db, path)
+  puts "Loading the following regions from bailfunds.github.io..."
   path.children.each do |child|
     child.open do |f|
       process_regional_data(db, YAML.load(f))

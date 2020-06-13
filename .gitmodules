@@ -1,0 +1,3 @@
+[submodule "bailfunds.github.io"]
+	path = bailfunds.github.io
+	url = https://github.com/bailfunds/bailfunds.github.io
