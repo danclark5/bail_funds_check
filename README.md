@@ -7,6 +7,7 @@ against what's in Resistance Map. From there it will spit out differences so tha
 
 - install `ruby`
 - `bundle install`
+- You need to set your AirTable api key as an evironment variable, `export AIRTABLE_KEY="Your key here"`
 
 ## How to run
 
