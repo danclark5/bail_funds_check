@@ -30,5 +30,9 @@ def process_bailfunds(db, state, city, bailfunds)
 end
 
 def insert_record(db, state, city, name)
-  db.execute "INSERT INTO resistance_map(name, city, state) values ('#{name}', '#{city}', '#{state}')"
+  db.execute "INSERT INTO bailfunds(name, city, state) values (\"#{name}\", \"#{sanitize_city(city)}\", \"#{state}\")"
+end
+
+def sanitize_city city
+  city.to_s.gsub /"/, '|'
 end
