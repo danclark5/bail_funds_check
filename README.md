@@ -6,8 +6,7 @@ against what's in Resistance Map. From there it will spit out differences so tha
 ## Setup
 
 - install `ruby`
-- gem install sqlite3 (maybe get bundler into the mix so we just need to run `bundle`)
-- Done?
+- `bundle install`
 
 ## How to run
 
