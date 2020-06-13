@@ -1,5 +1,5 @@
-require 'airrecord'
-require_relative 'resistance_map/bail_fund'
+require "airrecord"
+require_relative "resistance_map/bail_fund"
 
 class ResistanceMap
 
@@ -15,7 +15,6 @@ class ResistanceMap
   end
 
   def self.insert_into_check_db (db, bail_fund)
-    puts bail_fund["Address or City"]
     db.execute <<-SQL
     INSERT INTO resistance_map(name, city, state) values (
     "#{bail_fund["Name"]}",

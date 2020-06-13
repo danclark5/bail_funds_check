@@ -1,4 +1,4 @@
-require 'yaml'
+require "yaml"
 
 def load_bailfunds_data(db, path)
   puts "Loading the following regions from bailfunds.github.io..."
@@ -25,7 +25,6 @@ def process_subregional_data(db, state, subregional_data)
 end
 
 def process_bailfunds(db, state, city, bailfunds)
-  puts "  #{city}" unless city.empty?
   bailfunds.each {|bf| insert_record(db, state, city, bf["name"])}
 end
 
